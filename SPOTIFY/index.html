@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </div>
+            
+            <nav class="nav-links">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> <span>Search</span></a></li>
+                    <li><a href="#"><i class="fas fa-book-open"></i> <span>Your Library</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="action-links">
+                <ul>
+                    <li><a href="#"><div class="icon-box add"><i class="fas fa-plus"></i></div> <span>Create Playlist</span></a></li>
+                    <li><a href="#"><div class="icon-box heart"><i class="fas fa-heart"></i></div> <span>Liked Songs</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="nav-arrows">
+                    <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="user-profile">
+                    <button class="explore-btn">Explore Premium</button>
+                    <div class="profile-icon"><i class="far fa-user"></i></div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <h2>Good evening</h2>
+                
+                <section class="playlist-section">
+                    <div class="section-header">
+                        <h3>Made For You</h3>
+                        <span>Show all</span>
+                    </div>
+                    <div class="cards-container" id="song-list">
+                        <!-- Cards injected by JS -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bottom Player -->
+    <div class="bottom-player">
+        <div class="now-playing">
+            <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=150" alt="Album Art" id="player-cover">
+            <div class="track-info">
+                <div class="track-name" id="player-title">Select a song</div>
+                <div class="artist-name" id="player-artist">-</div>
+            </div>
+            <button class="heart-btn"><i class="far fa-heart"></i></button>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button class="control-btn" id="shuffle-btn"><i class="fas fa-random"></i></button>
+                <button class="control-btn" id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                <button class="play-pause-btn" id="play-btn"><i class="fas fa-play"></i></button>
+                <button class="control-btn" id="next-btn"><i class="fas fa-step-forward"></i></button>
+                <button class="control-btn" id="repeat-btn"><i class="fas fa-redo"></i></button>
+            </div>
+            
+            <div class="progress-container">
+                <span class="time current-time" id="current-time">0:00</span>
+                <input type="range" class="progress-bar" id="progress-bar" value="0" min="0" max="100" step="1">
+                <span class="time total-time" id="total-time">0:00</span>
+            </div>
+        </div>
+
+        <div class="volume-controls">
+            <i class="fas fa-microphone"></i>
+            <i class="fas fa-list"></i>
+            <i class="fas fa-desktop"></i>
+            <i class="fas fa-volume-up" id="volume-icon"></i>
+            <input type="range" class="volume-slider" id="volume-slider" value="100" min="0" max="100" step="1">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
